@@ -45,7 +45,7 @@ class XylophoneApp extends StatelessWidget {
   }
 
   void playSound(String name) {
-    final AudioCache player = AudioCache();
+    final player = AudioCache();
     player.play('$name.wav');
   }
 }
