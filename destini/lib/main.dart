@@ -1,6 +1,5 @@
+import 'package:destini/story_brain.dart';
 import 'package:flutter/material.dart';
-
-//TODO: Step 15 - Run the app and see if you can see the screen update with the first story. Delete this TODO if it looks as you expected.
 
 void main() => runApp(Destini());
 
@@ -16,8 +15,6 @@ class Destini extends StatelessWidget {
   }
 }
 
-//TODO: Step 9 - Create a new storyBrain object from the StoryBrain class.
-
 class StoryPage extends StatefulWidget {
   StoryPage({Key? key}) : super(key: key);
 
@@ -26,11 +23,24 @@ class StoryPage extends StatefulWidget {
 }
 
 class _StroyPageState extends State<StoryPage> {
+  StoryBrain storyBrain = StoryBrain();
+
+  void userChoice(int userChoiceNumber) {
+    setState(() {
+      storyBrain.nextStory(userChoiceNumber);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        //TODO: Step 1 - Add background.png to this Container as a background image.
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(
+                  'images/background.png',
+                ),
+                fit: BoxFit.cover)),
         padding: EdgeInsets.symmetric(vertical: 50, horizontal: 15),
         constraints: BoxConstraints.expand(),
         child: SafeArea(
@@ -38,10 +48,10 @@ class _StroyPageState extends State<StoryPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
+              flex: 6,
               child: Center(
-                //TODO: Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
                 child: Text(
-                  "Story text will go here.",
+                  storyBrain.getStory(),
                   style: TextStyle(
                     fontSize: 25,
                   ),
@@ -49,17 +59,15 @@ class _StroyPageState extends State<StoryPage> {
               ),
             ),
             Expanded(
-              flex: 2,
+              flex: 1,
               child: ElevatedButton(
                 child: Text(
-                  "Choice 1",
+                  storyBrain.getChoice1(),
                   style: TextStyle(
                     fontSize: 20,
                   ),
                 ),
-                onPressed: (() => {
-                      //TODO: Step 18 - Call the nextStory() method from storyBrain and pass the number 1 as the choice made by the user.
-                    }),
+                onPressed: (() => {userChoice(1)}),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.red,
                 ),
@@ -69,21 +77,22 @@ class _StroyPageState extends State<StoryPage> {
               height: 20,
             ),
             Expanded(
-              flex: 2,
-              //TODO: Step 26 - Use a Flutter Visibility Widget to wrap this FlatButton.
-              //TODO: Step 28 - Set the "visible" property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.
-              child: ElevatedButton(
-                child: Text(
-                  "Choice 2",
-                  style: TextStyle(
-                    fontSize: 20,
+              flex: 1,
+              child: Visibility(
+                visible: storyBrain.buttonShouldBeVisible(),
+                child: ElevatedButton(
+                  child: Text(
+                    storyBrain.getChoice2(),
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
-                ),
-                onPressed: (() => {
-                      //TODO: Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
-                    }),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  onPressed: (() => {
+                        userChoice(2),
+                      }),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blue,
+                  ),
                 ),
               ),
             ),
