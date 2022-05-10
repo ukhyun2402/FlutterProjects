@@ -1,16 +1,16 @@
-# bmi_calculator
+# BMI Calculator
 
-A new Flutter project.
+사용자로부터 키와 몸무게 정보를 입력받아 BMI(Body Mass Index)를 계산할 수 있는 앱을 만들었습니다.
 
-## Getting Started
+## 이번 앱을 만들면서 배운 점
 
-This project is a starting point for a Flutter application.
+- Navigator를 이용해 화면이동을 배울 수 있었습니다.**Route**를 네이밍하여 쉽게 이동할 수 있음도 배웠습니다.
+- 열거형 데이터 타입인 **Enum**을 배우고 활용함으로써 유지보수 측면에서 향상된 코드를 작성할 수 있었습니다.
+- Slider를 커스텀하기 위해 SliderThemeData를 활용해봄으로써 기본 제공되는 위젯을 커스텀 할 수 있음을 알 수 있었습니다.
+- callback 함수에 대해 알 수 있었습니다.
+- const와 final에 대한 차이를 인지하면서 Function void의 차이에 대해서 알 수 있었습니다.
 
-A few resources to get you started if this is your first Flutter project:
+## 실제화면
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![android1](./picture//android1.png)
+![android2](./picture//android2.png)
