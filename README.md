@@ -8,3 +8,4 @@
 | 3    | Xylophone     | 2022.05.07 | [링크](./xylophone/)  |
 | 4    | Quizzler      | 2022.05.09 | [링크](./quizzler/)   |
 | 5    | Destini       | 2022.05.09 | [링크](./destini/)    |
+| 6    | BMI Calculator       | 2022.05.10 | [링크](./bmi_calculator/)    |
