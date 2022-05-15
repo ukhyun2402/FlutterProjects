@@ -34,3 +34,5 @@ const kTextFieldInputDecoration = InputDecoration(
     borderSide: BorderSide.none,
   ),
 );
+
+const String API_KEY = "ebd8436f4131c2c7c42f5fb3063e5b6c";

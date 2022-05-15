@@ -1,8 +1,8 @@
 import 'package:clima/services/location.dart';
 import 'package:clima/services/networking.dart';
+import 'package:clima/utilities/constants.dart';
 import 'package:flutter/cupertino.dart';
 
-const String API_KEY = "ebd8436f4131c2c7c42f5fb3063e5b6c";
 const String openWeatherMapURL =
     "https://api.openweathermap.org/data/2.5/weather";
 
