@@ -9,3 +9,5 @@
 | 4    | Quizzler      | 2022.05.09 | [링크](./quizzler/)   |
 | 5    | Destini       | 2022.05.09 | [링크](./destini/)    |
 | 6    | BMI Calculator       | 2022.05.10 | [링크](./bmi_calculator/)    |
+| 7    | Clima       | 2022.05.15 | [링크](./clima/)    |
+| 8    | bitcoin_ticker       | 2022.05.16 | [링크](./bitcoin_ticker/)    |
