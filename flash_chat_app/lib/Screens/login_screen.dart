@@ -1,8 +1,10 @@
+import 'package:flash_chat_app/components/rounded_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+  static String id = "Login";
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -19,9 +21,12 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              height: 200,
-              child: Image.asset('images/logo.png'),
+            Hero(
+              tag: 'logo',
+              child: Container(
+                height: 200,
+                child: Image.asset('images/logo.png'),
+              ),
             ),
             SizedBox(
               height: 48,
@@ -75,24 +80,10 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 24.0,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
+            RoundedButton(
+                text: "Log In",
                 color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    //Implement login functionality.
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Log In',
-                  ),
-                ),
-              ),
-            ),
+                onPressed: () {}),
           ],
         ),
       ),
